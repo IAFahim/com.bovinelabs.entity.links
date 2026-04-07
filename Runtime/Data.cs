@@ -1,4 +1,5 @@
 using System;
+using BovineLabs.Reaction.Data.Core;
 using Unity.Entities;
 
 namespace BovineLabs.EntityLinks
@@ -10,25 +11,24 @@ namespace BovineLabs.EntityLinks
         public Entity Value;
     }
 
+    [InternalBufferCapacity(4)]
     public struct EntityLookupRequestBuffer : IBufferElementData
     {
         public byte Key;
         public ResolveRule ResolveRule;
+        public Target AssignTo;
     }
 
-    public struct EntityLookupResolvedThisFrame : IComponentData, IEnableableComponent { }
+    public struct EntityLookupResolvedThisFrame : IComponentData, IEnableableComponent
+    {
+    }
 
+    [InternalBufferCapacity(4)]
     public struct EntityLookupResolveResult : IBufferElementData
     {
         public byte Key;
+        public Target AssignedTo;
         public Entity Value;
-    }
-
-    public struct EntityLinkTargets : IComponentData
-    {
-        public Entity Owner;
-        public Entity Source;
-        public Entity Target;
     }
 
     [Flags]
