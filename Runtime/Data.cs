@@ -3,30 +3,32 @@ using Unity.Entities;
 
 namespace BovineLabs.EntityLinks
 {
-    [InternalBufferCapacity(0)]
+    [InternalBufferCapacity(4)]
     public struct EntityLookupStoreBuffer : IBufferElementData
     {
         public byte Key;
-        public ResolveRule ResolveRule;
         public Entity Value;
     }
 
-
-    [InternalBufferCapacity(0)]
     public struct EntityLookupRequestBuffer : IBufferElementData
     {
         public byte Key;
         public ResolveRule ResolveRule;
     }
 
-    public struct EntityLookupResolvedThisFrame : IComponentData, IEnableableComponent
-    {
-    }
+    public struct EntityLookupResolvedThisFrame : IComponentData, IEnableableComponent { }
 
-    [InternalBufferCapacity(0)]
     public struct EntityLookupResolveResult : IBufferElementData
     {
+        public byte Key;
         public Entity Value;
+    }
+
+    public struct EntityLinkTargets : IComponentData
+    {
+        public Entity Owner;
+        public Entity Source;
+        public Entity Target;
     }
 
     [Flags]
@@ -37,7 +39,7 @@ namespace BovineLabs.EntityLinks
         ParentsTarget = 1 << 1,
         SelfTarget = 1 << 2,
         Owner = 1 << 3,
-        Source = 1 << 5,
-        Target = 1 << 6
+        Source = 1 << 4,
+        Target = 1 << 5
     }
 }
