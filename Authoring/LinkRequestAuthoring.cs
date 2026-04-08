@@ -9,7 +9,7 @@ namespace BovineLabs.EntityLinks.Authoring
     public class LinkRequestAuthoring : MonoBehaviour
     {
         public EntityLinkLookupBufferBakeData[] entityLinkLookupBufferBakeData;
-        public bool resolveAtStart;
+        public bool resolve;
         
         [Serializable]
         public class EntityLinkLookupBufferBakeData
@@ -43,7 +43,7 @@ namespace BovineLabs.EntityLinks.Authoring
                 }
 
                 this.AddComponent<EntityLookupRequestedThisFrame>(entity);
-                this.SetComponentEnabled<EntityLookupRequestedThisFrame>(entity, authoring.resolveAtStart);
+                this.SetComponentEnabled<EntityLookupRequestedThisFrame>(entity, authoring.resolve);
                 
                 this.AddBuffer<EntityLookupResolveResult>(entity);
             }
