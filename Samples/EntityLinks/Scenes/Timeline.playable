@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0e17babbd54662b134216cdd8ebd8f, type: 3}
   m_Name: EntityLinkAttachClip
   m_EditorClassIdentifier: Bovinelabs.Timeline.Entity.Links.Authoring::BovineLabs.Timeline.EntityLinks.Authoring.EntityLinkAttachClip
-  linkKey: 5
-  resolveRule: 9
+  linkKey: 6
+  resolveRule: 4
   transformConfig: 255
 --- !u!114 &7593822311261907031
 MonoBehaviour:
