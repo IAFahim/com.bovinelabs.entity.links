@@ -6,28 +6,24 @@ using UnityEngine;
 
 namespace BovineLabs.EntityLinks.Authoring
 {
-    public class EntityLinkLookupResolverAuthoring : MonoBehaviour
+    public class EntityLinkLookupAuthoring : MonoBehaviour
     {
-        public EntityTagsMonoBehavior[] links = Array.Empty<EntityTagsMonoBehavior>();
-        private void OnValidate() => links = GetComponentsInChildren<EntityTagsMonoBehavior>(true);
+        public EntityTagAuthoring[] links = Array.Empty<EntityTagAuthoring>();
+        private void OnValidate() => links = GetComponentsInChildren<EntityTagAuthoring>(true);
 
-        public class EntityLinkLookupResolverBaker : Baker<EntityLinkLookupResolverAuthoring>
+        public class EntityLinkLookupResolverBaker : Baker<EntityLinkLookupAuthoring>
         {
-            public override void Bake(EntityLinkLookupResolverAuthoring authoring)
+            public override void Bake(EntityLinkLookupAuthoring authoring)
             {
                 var entries = new List<EntityLookupStoreData>();
 
                 foreach (var entityTagsMonoBehavior in authoring.links)
                 {
-                    foreach (var data in entityTagsMonoBehavior.tags)
+                    entries.Add(new EntityLookupStoreData
                     {
-                        if (!data.transform) continue;
-                        entries.Add(new EntityLookupStoreData
-                        {
-                            Key = data.key,
-                            Value = GetEntity(data.transform, TransformUsageFlags.None),
-                        });
-                    }
+                        Key = entityTagsMonoBehavior.key,
+                        Value = GetEntity(entityTagsMonoBehavior, TransformUsageFlags.None),
+                    });
                 }
 
                 var builder = new BlobBuilder(Allocator.Temp);

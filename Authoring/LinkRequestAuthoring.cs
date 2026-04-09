@@ -8,11 +8,11 @@ namespace BovineLabs.EntityLinks.Authoring
 {
     public class LinkRequestAuthoring : MonoBehaviour
     {
-        public EntityLinkLookupBufferBakeData[] entityLinkLookupBufferBakeData;
+        public EntityLinkRequestBufferBakeData[] entityLinkLookupBufferBakeDatas = Array.Empty<EntityLinkRequestBufferBakeData>();
         public bool resolveAtStart;
 
         [Serializable]
-        public class EntityLinkLookupBufferBakeData
+        public class EntityLinkRequestBufferBakeData
         {
             [K(nameof(EntityLinkKeys))] public byte key;
 
@@ -37,7 +37,7 @@ namespace BovineLabs.EntityLinks.Authoring
                 var entity = GetEntity(TransformUsageFlags.None);
                 var requests = AddBuffer<EntityLookupRequestBuffer>(entity);
 
-                foreach (var b in authoring.entityLinkLookupBufferBakeData) requests.Add(b.ToEntityLookupStoreBuffer());
+                foreach (var b in authoring.entityLinkLookupBufferBakeDatas) requests.Add(b.ToEntityLookupStoreBuffer());
 
                 AddComponent<EntityLookupRequestedThisFrame>(entity);
                 SetComponentEnabled<EntityLookupRequestedThisFrame>(entity, authoring.resolveAtStart);
