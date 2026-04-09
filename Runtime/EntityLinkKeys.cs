@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using BovineLabs.Core.Keys;
 using BovineLabs.Core.Settings;
-using System.Collections.Generic;
 
 namespace BovineLabs.EntityLinks
 {

@@ -4,10 +4,20 @@ using Unity.Entities;
 
 namespace BovineLabs.EntityLinks
 {
-    public struct EntityLookupStoreBuffer : IBufferElementData
+    public struct EntityLookupStoreData
     {
         public byte Key;
         public Entity Value;
+    }
+    
+    public struct EntityLookupStoreBlob
+    {
+        public BlobArray<EntityLookupStoreData> Entries;
+    }
+
+    public struct EntityLookupStoreBlobComponent : IComponentData
+    {
+        public BlobAssetReference<EntityLookupStoreBlob> Blob;
     }
 
     [InternalBufferCapacity(4)]
@@ -18,9 +28,7 @@ namespace BovineLabs.EntityLinks
         public Target AssignTo;
     }
 
-    public struct EntityLookupRequestedThisFrame : IComponentData, IEnableableComponent
-    {
-    }
+    public struct EntityLookupRequestedThisFrame : IComponentData, IEnableableComponent { }
 
     [InternalBufferCapacity(4)]
     public struct EntityLookupResolveResult : IBufferElementData
