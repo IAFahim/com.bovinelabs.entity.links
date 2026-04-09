@@ -15,9 +15,8 @@ namespace BovineLabs.EntityLinks.Authoring
         public class EntityLinkRequestBufferBakeData
         {
             [K(nameof(EntityLinkKeys))] public byte key;
-
             public ResolveRule resolveRule = ResolveRule.Parent | ResolveRule.Owner;
-            public Target assignTo = Target.Target;
+            public Target assignTo = Target.Self;
 
             public EntityLookupRequestBuffer ToEntityLookupStoreBuffer()
             {

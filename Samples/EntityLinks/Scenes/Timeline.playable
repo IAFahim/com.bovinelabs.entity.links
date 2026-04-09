@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3045431605822738478
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0e17babbd54662b134216cdd8ebd8f, type: 3}
-  m_Name: EntityLinkAttachClip
-  m_EditorClassIdentifier: Bovinelabs.Timeline.Entity.Links.Authoring::BovineLabs.Timeline.EntityLinks.Authoring.EntityLinkAttachClip
-  linkKey: 6
-  resolveRule: 9
-  transformConfig: 255
 --- !u!114 &-1683009330099079295
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45,28 +30,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.TimelineAsset
   m_Version: 0
   m_Tracks:
-  - {fileID: 8093092550757627359}
+  - {fileID: 497872645503015079}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
---- !u!114 &7593822311261907031
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f27407e87d4776b5607416dc8d650f, type: 3}
-  m_Name: EntityLinkAttachClip
-  m_EditorClassIdentifier: Bovinelabs.Timeline.Entity.Links.Authoring::BovineLabs.Timeline.EntityLinks.Authoring.EntityLinkAttachClip
-  linkKey: 6
-  resolveRule: 9
---- !u!114 &8093092550757627359
+--- !u!114 &497872645503015079
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,12 +59,12 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.1
+    m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -3045431605822738478}
+    m_Asset: {fileID: 3883616950681010629}
     m_Duration: 1
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 8093092550757627359}
+    m_ParentTrack: {fileID: 497872645503015079}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0
@@ -159,3 +130,32 @@ MonoBehaviour:
   m_Markers:
     m_Objects: []
   resetOnDeactivate: 1
+--- !u!114 &3883616950681010629
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0e17babbd54662b134216cdd8ebd8f, type: 3}
+  m_Name: EntityLinkAttachClip
+  m_EditorClassIdentifier: Bovinelabs.Timeline.Entity.Links.Authoring::BovineLabs.Timeline.EntityLinks.Authoring.EntityLinkAttachClip
+  linkKey: 5
+  resolveRule: 9
+  transformConfig: 255
+--- !u!114 &7593822311261907031
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f27407e87d4776b5607416dc8d650f, type: 3}
+  m_Name: EntityLinkAttachClip
+  m_EditorClassIdentifier: Bovinelabs.Timeline.Entity.Links.Authoring::BovineLabs.Timeline.EntityLinks.Authoring.EntityLinkAttachClip
+  linkKey: 6
+  resolveRule: 9
